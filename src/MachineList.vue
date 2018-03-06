@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Liste des machines</h1>
-		<Machine v-bind:name='name' :status='status' :checkedAt='checkedAt'></Machine>
+		<Machine v-for='machine in machines' :key='machine.id' v-bind:name='machine.name' :status='machine.status' :checkedAt='machine.checkedAt.toLocaleString()'></Machine>
 	</div>
 
 </template>
@@ -16,10 +16,23 @@ import Machine from './Machine.vue';
 		data(){
 			return {
 
-		name: 'What else?',
-		status: false,
-		checkedAt: new Date().toLocaleString(),
+    machines: [{
+        id: 1,
+        name: 'What else ?',
+        status: true,
+        checkedAt: new Date(),
+    }, {
+        id: 2,
+        name: 'Broken',
+        status: false,
+        checkedAt: new Date(),
+    	}]
+			}
 		}
 	}
-	}
 </script>
+
+<style>
+
+
+</style>

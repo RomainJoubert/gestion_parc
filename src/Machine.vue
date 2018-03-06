@@ -14,7 +14,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.ok {
 		color: green;
 	}
@@ -22,4 +22,12 @@
 	.ko {
 		color: red;
 	}
+
+	div {
+	  border: 2px solid black;
+	  border-radius: 10px;
+       margin: auto;
+       width: 60%;
+       margin-bottom: 15px;
+}
 </style>
