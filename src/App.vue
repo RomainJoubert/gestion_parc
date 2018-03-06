@@ -3,8 +3,8 @@
     <img src="./assets/logo.jpg">
     <h1>{{ msg }}</h1>
  
-    <router-link to='/liste'><button v-on:click='onMachinesListClick'><b>Afficher la liste des machines</b></button></router-link>
-    <router-link to='/carte'><button v-on:click='onMapClick'><b>Carte des machines</b></button></router-link>
+    <router-link to='/machines'><button v-on:click='onMachinesListClick'><b>Afficher la liste des machines</b></button></router-link>
+    <router-link to='/map'><button v-on:click='onMapClick'><b>Carte des machines</b></button></router-link>
    <!--  <liste></liste>
     <carte></carte> -->
    <router-view></router-view>
@@ -12,16 +12,17 @@
 </template>
 
 <script>
+
 export default {
   name: 'app',
-  data () {
-    return {
-      msg: "Bienvenue sur l'appli de gestion de parc"
-    }
-  },
+    data () {
+      return {
+       msg: "Bienvenue sur l'appli de gestion de parc"
+      }
+  }, 
   methods : {
     onMachinesListClick: function(){
-    alert("Un utilisateur a cliqué sur la liste des machines")
+      alert("Un utilisateur a cliqué sur la liste des machines")
       },
     onMapClick : function() {
       alert("Un utilisateur a cliqué sur la carte des machines")

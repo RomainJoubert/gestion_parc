@@ -10,8 +10,8 @@ Vue.component('carte', Carte)
 Vue.use(VueRouter)
 
 const routes = [
-{path: '/liste', component: Liste},
-{path: '/carte', component: Carte},
+{path: '/machines', component: Liste},
+{path: '/map', component: Carte},
 {path: '/machine', component: Machine}
 ]
 
