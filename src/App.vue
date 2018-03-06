@@ -3,11 +3,11 @@
     <img src="./assets/logo.jpg">
     <h1>{{ msg }}</h1>
  
-    <button v-on:click='onMachinesListClick'><b>Afficher la liste des machines</b></button>
-    <button v-on:click='onMapClick'><b>Carte des machines</b></button>
-    <liste></liste>
-    <carte></carte>
-   
+    <router-link to='/liste'><button v-on:click='onMachinesListClick'><b>Afficher la liste des machines</b></button></router-link>
+    <router-link to='/carte'><button v-on:click='onMapClick'><b>Carte des machines</b></button></router-link>
+   <!--  <liste></liste>
+    <carte></carte> -->
+   <router-view></router-view>
   </div>
 </template>
 

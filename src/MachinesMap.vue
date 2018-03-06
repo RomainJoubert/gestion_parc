@@ -7,7 +7,7 @@
 <script>
 	export default {
 		name:'machineMap',
-		// props:['Carte']
+		props:['Carte']
 	}
 
 </script>
