@@ -6,8 +6,9 @@
 		:zoom="12">
 
 		<div>
+			
 			<gmap-marker
-			:key="id"
+			:key="marker.id"
 			v-for="marker in markers"
 			:position="marker.position"
 			:clickable="true"
@@ -15,16 +16,20 @@
 		
 			></gmap-marker>
 	</div>
+	
+
 </gmap-map>
 </div>
 </template>
 
 <script>
+
 export default {
 		name:'machineMap',
 	data (){
 
 		return {
+			
 			markers: [{
 				id:1,
 				position: {lat: 44.816667, lng: 5.75}
