@@ -5,9 +5,11 @@ import machineMap from'./MachinesMap.vue'
 import VueRouter from 'vue-router'
 import Machine from './Machine.vue'
 import * as VueGoogleMaps from 'vue2-google-maps'
+require('./google.js');
+
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyDmtPSxy9KMMkGufDTGRuoDugDhnt7WeDQ',
+    key: mykey,
     libraries: 'places', // This is required if you use the Autocomplete plugin
   }
 })
