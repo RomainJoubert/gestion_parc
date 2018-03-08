@@ -3,14 +3,14 @@
 		<h1>Carte des machines</h1>
 		<gmap-map class="maps"
 		:center="{lat:45.1885, lng:5.7245}"
-		:zoom="12">
+		:zoom="3">
 
 		<div>
 			
 			<gmap-marker
-			:key="marker.id"
-			v-for="marker in markers"
-			:position="marker.position"
+			:key="machine.id"
+			v-for="machine in machines"
+			:position="{lat:Number(machine.latitude), lng:Number(machine.longitude)}"
 			:clickable="true"
 			:draggable="true"
 		
@@ -23,22 +23,29 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
 		name:'machineMap',
-	data (){
-
+		data: function() {
 		return {
-			
-			markers: [{
-				id:1,
-				position: {lat: 44.816667, lng: 5.75}
-			}, 
-			{
-				id:2,
-				position: {lat: 45.1333, lng: 5.7167}
-			}]
-		}
+		      machines: [], // au début la liste des machines est vide
+		      loading: false,
+		      error: null,
+		  }
+		},
+		 // Fetches posts when the component is created.
+  	created() {
+    axios.get(`https://machine-api-campus.herokuapp.com/api/machines`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.loading =true,
+      this.machines = response.data
+    })
+    .catch(error => {
+      this.errors.push(error)
+    })
+	
 	}
 }
 

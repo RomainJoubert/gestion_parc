@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Liste des machines</h1>
-		<Machine v-for='machine in machines' :key='machine.id' v-bind:name='machine.name' :status='machine.status' :checkedAt='machine.checkedAt.toLocaleString()'></Machine>
+		<Machine v-for='machine in machines' :key='machine.id' v-bind:name='machine.name' :status='machine.status' :checkedAt='machine.checkedAt'></Machine>
 	</div>
 
 </template>
